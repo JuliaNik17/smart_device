@@ -1,0 +1,128 @@
+.catalog {
+  width: 100%;
+  background-color: $color-black-pearl;
+  display: flex;
+}
+
+.catalog__wrapper {
+  width: 80%;
+  max-width: 1220px;
+  display: flex;
+  flex-direction: column;
+  margin: 70px auto 140px;
+
+  @include vp-1023 {
+    width: 87%;
+  }
+
+  @include vp-767 {
+    width: 84%;
+    min-width: 270px;
+  }
+}
+
+.catalog__wrapper h2 {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+  color: $color-default-white;
+  margin-top: 0;
+  margin-bottom: 50px;
+
+  @include vp-767 {
+    font-size: 28px;
+    line-height: 39px;
+  }
+}
+
+.catalog__head--desktop {
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.catalog__head--mob {
+  display: none;
+
+  @include vp-767 {
+    display: block;
+  }
+}
+
+.catalog__list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 85px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @include vp-1023 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 20px;
+  }
+}
+
+.catalog__item h3 {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: $color-default-white;
+  margin-top: 50px;
+  margin-left: 40px;
+  position: absolute;
+
+  @include vp-1023 {
+    margin-top: 40px;
+    margin-left: 45px;
+  }
+
+  @include vp-767 {
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+}
+
+.catalog__item a {
+  display: block;
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.catalog__item a:focus-visible h3,
+.catalog__item a:hover h3,
+.catalog__item a:active h3 {
+  color: $color-deep-sky-blue;
+  opacity: 1;
+}
+
+.catalog__inside {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.catalog__decoration {
+  background-color: $color-deep-sky-blue;
+  margin-left: auto;
+  margin-top: -60px;
+}
+
+.catalog__background {
+  background-color: $color-tory-blue;
+
+  @include vp-1023 {
+    width: 100%;
+    height: 250px;
+  }
+}

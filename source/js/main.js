@@ -13,12 +13,53 @@ window.addEventListener('DOMContentLoaded', () => {
   // Modules
   // ---------------------------------
 
+  const phoneNumber = document.querySelector('.phone-number');
+  const maskOptions = {
+    mask: '+{7}(000)000-00-00',
+  };
+  IMask(phoneNumber, maskOptions);
+
+  const phoneNumberModal = document.querySelector('.phone-number-modal');
+  IMask(phoneNumberModal, maskOptions);
+
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
     initModals();
   });
 });
+
+const body = document.querySelector('.page__body');
+const aboutCompanyButton = document.querySelector('.about-company__button');
+const aboutCompanyHidden = document.querySelector('.about-company__hidden');
+const pageHeaderButton = document.querySelector('.page-header__button');
+const modal = document.querySelector('.modal');
+const modalCloseButton = document.querySelector('.modal__close-btn');
+
+aboutCompanyButton.classList.remove('visually-hidden');
+aboutCompanyHidden.classList.add('visually-hidden');
+
+aboutCompanyButton.addEventListener('click', function () {
+  if (aboutCompanyHidden.classList.contains('visually-hidden')) {
+    aboutCompanyHidden.classList.remove('visually-hidden');
+    aboutCompanyButton.textContent = 'Свернуть';
+  } else {
+    aboutCompanyHidden.classList.add('visually-hidden');
+    aboutCompanyButton.textContent = 'Подробнее';
+  }
+});
+
+pageHeaderButton.addEventListener('click', function () {
+  modal.classList.add('is-active');
+  document.getElementById('client-name-modal').focus();
+  body.classList.add('page__lock');
+});
+
+modalCloseButton.addEventListener('click', function () {
+  modal.classList.remove('is-active');
+  body.classList.remove('page__lock');
+});
+
 
 // ---------------------------------
 

@@ -1,0 +1,168 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.form__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+
+  @include vp-767 {
+    flex-direction: column;
+  }
+}
+
+.form__list--modal {
+  flex-direction: column;
+}
+
+.form__item {
+  width: 45%;
+
+  @include vp-767 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.form__list--modal .form__item {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form input,
+.form textarea {
+  background-color: rgba(4, 20, 39, 0.15);
+  color: rgba(255, 255, 255, 1);
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  border: none;
+  border-radius: 3px;
+  padding: 15px;
+
+  &:focus {
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  }
+
+  @include vp-767 {
+    width: 100%;
+  }
+}
+
+.form input {
+  width: 100%;
+  color: $color-black-pearl;
+}
+
+.form textarea {
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 110px;
+  color: $color-black-pearl;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: $color-default-white;
+  opacity: 1;
+}
+
+.form__send {
+  display: flex;
+  width: 100%;
+
+  @include vp-767 {
+    flex-direction: column;
+  }
+}
+
+.form__send fieldset {
+  margin-left: auto;
+  margin-bottom: 0;
+
+  @include vp-767 {
+    margin-top: 25px;
+    margin-left: 0;
+  }
+}
+
+.form__agreement label {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+.form__agreement input {
+  width: 0;
+}
+
+.form__agreement p {
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: $color-default-white;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 0;
+  opacity: 0.8;
+}
+
+.form__agreement br {
+  display: block;
+}
+
+.form button {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $color-default-white;
+  background-color: $color-black-pearl-button;
+  border: none;
+  border-radius: 3px;
+  width: 265px;
+  height: 45px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    opacity: 0.8;
+    color: $color-deep-sky-blue;
+  }
+
+  @include vp-767 {
+    width: 100%;
+  }
+}
+
+.form .send-button--modal {
+  width: 100%;
+  margin-bottom: 20px;
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    opacity: 0.8;
+    color: $color-deep-sky-blue;
+  }
+}

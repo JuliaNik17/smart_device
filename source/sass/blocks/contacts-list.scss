@@ -1,0 +1,19 @@
+.contacts-list {
+  list-style: none;
+  padding-left: 0;
+  flex-wrap: wrap;
+}
+
+.contacts-list a {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+
+  &:hover,
+  &:active,
+  &:focus-visible {
+    color: $color-default-white;
+  }
+}

@@ -1,0 +1,30 @@
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-left: 0;
+  flex-wrap: wrap;
+  width: 470px;
+  height: 130px;
+
+  @include vp-1023 {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.nav-list__item a {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  cursor: pointer;
+  margin: 0 10px;
+
+  &:hover,
+  &:active,
+  &:focus-visible {
+    color: $color-default-white;
+  }
+}

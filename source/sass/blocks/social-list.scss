@@ -1,0 +1,14 @@
+.social-list__item {
+  cursor: pointer;
+  margin-right: 15px;
+
+  &:hover,
+  &:active,
+  &:focus-within {
+    opacity: 0.7;
+  }
+}
+
+.social-list__item a {
+  display: flex;
+}
