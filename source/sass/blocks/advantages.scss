@@ -5,25 +5,28 @@
 
 .advantages__list {
   width: 80%;
-  max-width: 1222px;
+  max-width: 1235px;
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
-  margin: 120px auto;
+  margin: 120px auto 0;
   list-style: none;
   padding: 0;
-  padding-left: 10px;
+  padding-left: 12px;
 
   @include vp-1023 {
     width: 100%;
     padding: 0 50px;
+    margin-top: 80px;
   }
 
   @include vp-767 {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     padding: 0 25px;
+    margin-top: 50px;
+    grid-gap: 32px;
   }
 }
 
@@ -34,20 +37,22 @@
   border: 1px solid $color-whisper;
   box-sizing: border-box;
   border-left: 5px solid $color-deep-sky-blue;
-  padding: 40px 45px 35px;
+  padding: 40px 45px 35px 43px;
 
   &:hover {
     background-color: $color-deep-sky-blue;
   }
 
   @include vp-1023 {
-    padding-left: 30px;
+    padding-left: 40px;
+    padding-bottom: 30px;
   }
 
   @include vp-767 {
     padding: 30px;
     min-width: 270px;
     padding-left: 25px;
+    padding-bottom: 55px;
   }
 }
 
@@ -58,6 +63,8 @@
 
 .advantages__item svg {
   fill: $color-deep-sky-blue;
+  width: 30px;
+  height: 30px;
 }
 
 .advantages__item:hover svg {
@@ -68,14 +75,63 @@
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
   font-size: 24px;
-  line-height: 34px;
+  line-height: 35px;
+  letter-spacing: -0.05em;
   color: $color-deep-sky-blue;
   margin-top: 20px;
   margin-bottom: 0;
 
+  @include vp-1023 {
+    margin-top: 15px;
+  }
+
   @include vp-767 {
     font-size: 20px;
     line-height: 28px;
+  }
+}
+
+.advantages__item--price h3 {
+  margin-top: 18px;
+
+  @include vp-1023 {
+    margin-top: 5px;
+  }
+
+  @include vp-767 {
+    margin-top: 17px;
+  }
+}
+
+.advantages__item--privacy {
+  padding: 37px 45px 35px 40px;
+
+  @include vp-767 {
+    padding-bottom: 20px;
+    height: min-content;
+    // height: 325px;
+  }
+}
+
+.advantages__item--price {
+  padding-right: 35px;
+
+  @include vp-767 {
+    margin-top: -15px;
+    height: min-content;
+    // height: 325px;
+  }
+}
+
+.advantages__item--privacy h3 {
+  margin-left: 2px;
+
+  @include vp-1023 {
+    margin-left: 0;
+  }
+
+  @include vp-767 {
+    margin-top: 18px;
   }
 }
 
@@ -85,11 +141,39 @@
   font-size: 16px;
   line-height: 22px;
   color: $color-black-pearl;
-  margin-top: 15px;
+  margin-top: 12px;
   margin-bottom: 35px;
+  letter-spacing: 0.05em;
+
+  @include vp-1023 {
+    margin-top: 7px;
+    margin-bottom: 0;
+  }
 
   @include vp-767 {
     font-size: 14px;
     line-height: 19px;
+  }
+}
+
+.advantages__item--privacy p {
+  @include vp-767 {
+    margin-top: 14px;
+    margin-bottom: 98px;
+  }
+}
+
+.advantages__item--price p {
+  @include vp-767 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+}
+
+.advantages__item--suppliers {
+  margin-top: 9px;
+
+  @include vp-767 {
+    margin-top: 0;
   }
 }

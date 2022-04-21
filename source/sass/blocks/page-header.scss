@@ -97,8 +97,11 @@
   margin-top: 5px;
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:focus-visible,
+  &:active {
     opacity: 0.8;
+    color: $color-deep-sky-blue;
   }
 
   @include vp-1023 {

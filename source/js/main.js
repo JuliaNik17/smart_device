@@ -1,7 +1,16 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
+// import {createFocusTrap} from './modules/modals/focus-trap';
+// import { FocusLock } from './utils/focus-lock';
 
 // ---------------------------------
+const name = document.querySelector('.client-name-modal');
+
+(function () {
+  const inputFocused = name.focus();
+  return inputFocused;
+})();
+
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -22,42 +31,78 @@ window.addEventListener('DOMContentLoaded', () => {
   const phoneNumberModal = document.querySelector('.phone-number-modal');
   IMask(phoneNumberModal, maskOptions);
 
+
+
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
     initModals();
   });
-});
 
-const body = document.querySelector('.page__body');
-const aboutCompanyButton = document.querySelector('.about-company__button');
-const aboutCompanyHidden = document.querySelector('.about-company__hidden');
-const pageHeaderButton = document.querySelector('.page-header__button');
-const modal = document.querySelector('.modal');
-const modalCloseButton = document.querySelector('.modal__close-btn');
+  const body = document.querySelector('.page__body');
+  const aboutCompanyButton = document.querySelector('.about-company__button');
+  const aboutCompanyHidden = document.querySelector('.about-company__hidden');
+  const pageHeaderButton = document.querySelector('.page-header__button');
 
-aboutCompanyButton.classList.remove('visually-hidden');
-aboutCompanyHidden.classList.add('visually-hidden');
+  // const form = document.querySelector('.contact-us form');
 
-aboutCompanyButton.addEventListener('click', function () {
-  if (aboutCompanyHidden.classList.contains('visually-hidden')) {
-    aboutCompanyHidden.classList.remove('visually-hidden');
-    aboutCompanyButton.textContent = 'Свернуть';
-  } else {
-    aboutCompanyHidden.classList.add('visually-hidden');
-    aboutCompanyButton.textContent = 'Подробнее';
-  }
-});
+  aboutCompanyButton.classList.remove('visually-hidden');
+  aboutCompanyHidden.classList.add('visually-hidden');
 
-pageHeaderButton.addEventListener('click', function () {
-  modal.classList.add('is-active');
-  document.getElementById('client-name-modal').focus();
-  body.classList.add('page__lock');
-});
+  aboutCompanyButton.addEventListener('click', function () {
+    if (aboutCompanyHidden.classList.contains('visually-hidden')) {
+      aboutCompanyHidden.classList.remove('visually-hidden');
+      aboutCompanyButton.textContent = 'Свернуть';
+    } else {
+      aboutCompanyHidden.classList.add('visually-hidden');
+      aboutCompanyButton.textContent = 'Подробнее';
+    }
+  });
 
-modalCloseButton.addEventListener('click', function () {
-  modal.classList.remove('is-active');
-  body.classList.remove('page__lock');
+  const modal = document.querySelector('.modal');
+  const modalCloseButton = document.querySelector('.modal__close-btn');
+  const modalOverlay = document.querySelector('.modal__overlay');
+  // const modalFocusTrap = createFocusTrap('.modal');
+
+  const isEscapeKey = (evt) => {
+    return evt.key === 'Escape';
+  };
+
+  const onModalEscKeydown = (evt) => {
+    if(isEscapeKey(evt)) {
+      modal.classList.remove('is-active');
+      body.classList.remove('page__lock');
+    }
+  };
+
+
+  pageHeaderButton.addEventListener('click', function () {
+    console.log(name);
+    name.focus();
+    modal.classList.add('is-active');
+    body.classList.add('page__lock');
+    document.addEventListener('keydown', onModalEscKeydown);
+    // modalFocusTrap.activate();
+    // FocusLock(modal);
+    // form.classList.add('visually-hidden');
+    // modalFocus();
+    // form.getElementsByClassName.display = 'none';
+  });
+
+  modalCloseButton.addEventListener('click', function () {
+    modal.classList.remove('is-active');
+    body.classList.remove('page__lock');
+    // modalFocusTrap.deactivate();
+    // form.classList.remove('visually-hidden');
+    // form.getElementsByClassName.display = 'flex';
+  });
+
+  modalOverlay.addEventListener('click', function () {
+    modal.classList.remove('is-active');
+    body.classList.remove('page__lock');
+  });
+
+
 });
 
 

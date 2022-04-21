@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="preload" href="fonts/ptmono-regular.woff2" as="font">
     <script src="https://unpkg.com/imask"></script>
+    <!-- <script src="https://unpkg.com/tabbable/dist/index.umd.js"></script> -->
+    <!-- <script src="https://unpkg.com/focus-trap/dist/focus-trap.umd.js"></script> -->
   </head>
   <body class="page__body">
     <div class="wrapper">
@@ -60,7 +62,7 @@
                 <path d="M17.5 11.7578C17.04 11.7578 16.6667 11.4515 16.6667 11.0742C16.6667 10.6969 17.04 10.3906 17.5 10.3906C17.96 10.3906 18.3333 10.6969 18.3333 11.0742C18.3333 11.4515 17.96 11.7578 17.5 11.7578Z" fill=""/>
               </svg>
               <h3 class="advantages__head">Оперативные сроки </h3>
-              <p class="advantages__text">Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить&nbsp;и&nbsp;доставлять заказы плат&nbsp;и&nbsp;комплектующих в&nbsp;самые короткие сроки</p>
+              <p class="advantages__text">Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить и&nbsp;доставлять заказы плат и&nbsp;комплектующих в&nbsp;самые короткие сроки</p>
             </li>
             <li class="advantages__item advantages__item--suppliers">
               <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -279,7 +281,7 @@
       <div class="modal__wrapper">
         <div class="modal__overlay" data-close-modal></div>
         <div class="modal__content">
-          <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
+          <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal tabindex="6">
             <svg width="25" height="25">
               <use xlink:href="img/sprite_auto.svg#icon-close"></use>
             </svg>
@@ -290,23 +292,23 @@
                 <fieldset class="form__data">
                   <ul class="form__list form__list--modal">
                     <li class="form__item">
-                      <label for="client-name" class="visually-hidden">Имя</label>
-                      <input type="text" name="client-name-modal" id="client-name-modal" placeholder="Имя" required autofocus>
+                      <label for="client-name-modal" class="visually-hidden">Имя</label>
+                      <input type="text" name="client-name-modal" id="client-name-modal" placeholder="Имя" class="client-name-modal" required autofocus tabindex="1">
                     </li>
                     <li class="form__item">
-                      <label for="phone-number" class="visually-hidden">Телефон</label>
-                      <input type="tel" name="phone-number-modal" id="phone-number-modal" placeholder="Телефон" required class="phone-number-modal" minlength="16" maxlength="16" data-mask="+7(000) 000-0000">
+                      <label for="phone-number-modal" class="visually-hidden">Телефон</label>
+                      <input type="tel" name="phone-number-modal" id="phone-number-modal" placeholder="Телефон" required class="phone-number-modal" minlength="16" maxlength="16" data-mask="+7(000) 000-0000" tabindex="2">
                     </li>
                   </ul>
                 </fieldset>
                 <fieldset class="form__text">
-                  <label for="comment-field" class="visually-hidden">Ваш вопрос</label>
-                  <textarea class="form__comment-field" name="comment" id="comment-field-modal" placeholder="Ваш вопрос"></textarea>
+                  <label for="comment-field-modal" class="visually-hidden">Ваш вопрос</label>
+                  <textarea class="form__comment-field" name="comment-field-modal" id="comment-field-modal" placeholder="Ваш вопрос" tabindex="3"></textarea>
                 </fieldset>
-                <button class="send-button send-button--modal button" type="submit">Отправить</button>
+                <button class="send-button send-button--modal button" type="submit" tabindex="4">Отправить</button>
                 <fieldset class="form__agreement">
-                  <input class="visually-hidden agreement-checkbox" type="checkbox" name="agreement" id="agreement-modal" checked required>
-                  <label class="agreement-name" for="agreement"><p>Я согласен на&nbsp;обработку персональных данных</p></label>
+                  <input class="visually-hidden agreement-checkbox" type="checkbox" name="agreement-modal" id="agreement-modal" checked required tabindex="5">
+                  <label class="agreement-name" for="agreement-modal"><p>Я согласен на&nbsp;обработку персональных данных</p></label>
                 </fieldset>
               </form>
         </div>
