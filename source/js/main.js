@@ -1,16 +1,53 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
+import './popup';
 // import {createFocusTrap} from './modules/modals/focus-trap';
 // import { FocusLock } from './utils/focus-lock';
 
 // ---------------------------------
-const name = document.querySelector('.client-name-modal');
+// const name = document.querySelector('.client-name-modal');
+// const body = document.querySelector('.page__body');
+// const pageHeaderButton = document.querySelector('.page-header__button');
+// const modal = document.querySelector('.modal');
+// const modalOverlay = document.querySelector('.modal__overlay');
+// const modalFormFocusTrap = createFocusTrap('.modal form');
+// const isEscapeKey = (evt) => {
+//   return evt.key === 'Escape';
+// };
 
-(function () {
-  const inputFocused = name.focus();
-  return inputFocused;
-})();
+// const onModalEscKeydown = (evt) => {
+//   if (isEscapeKey(evt)) {
+//     modal.classList.remove('is-active');
+//     body.classList.remove('page__lock');
+//   }
+// };
 
+// (function () {
+//   modalOverlay.addEventListener('click', function () {
+//     modal.classList.remove('is-active');
+//     body.classList.remove('page__lock');
+//   });
+
+//   pageHeaderButton.addEventListener('click', function () {
+//     setTimeout(function () {
+//       name.focus();
+//     }, 1);
+//     modal.classList.add('is-active');
+//     body.classList.add('page__lock');
+//     name.focus();
+//     // document.addEventListener('keydown', onModalEscKeydown);
+//     // modalFormFocusTrap.activate();
+//   });
+// })();
+
+// const modalCloseButton = document.querySelector('.modal__close-btn');
+
+// modalCloseButton.addEventListener('click', function () {
+//   modal.classList.remove('is-active');
+//   body.classList.remove('page__lock');
+//   // document.removeEventListener('keydown', onModalEscKeydown);
+//   // modalFormFocusTrap.deactivate();
+// });
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -39,10 +76,10 @@ window.addEventListener('DOMContentLoaded', () => {
     initModals();
   });
 
-  const body = document.querySelector('.page__body');
+
   const aboutCompanyButton = document.querySelector('.about-company__button');
   const aboutCompanyHidden = document.querySelector('.about-company__hidden');
-  const pageHeaderButton = document.querySelector('.page-header__button');
+
 
   // const form = document.querySelector('.contact-us form');
 
@@ -58,53 +95,39 @@ window.addEventListener('DOMContentLoaded', () => {
       aboutCompanyButton.textContent = 'Подробнее';
     }
   });
-
-  const modal = document.querySelector('.modal');
-  const modalCloseButton = document.querySelector('.modal__close-btn');
-  const modalOverlay = document.querySelector('.modal__overlay');
-  // const modalFocusTrap = createFocusTrap('.modal');
-
-  const isEscapeKey = (evt) => {
-    return evt.key === 'Escape';
-  };
-
-  const onModalEscKeydown = (evt) => {
-    if(isEscapeKey(evt)) {
-      modal.classList.remove('is-active');
-      body.classList.remove('page__lock');
-    }
-  };
-
-
-  pageHeaderButton.addEventListener('click', function () {
-    console.log(name);
-    name.focus();
-    modal.classList.add('is-active');
-    body.classList.add('page__lock');
-    document.addEventListener('keydown', onModalEscKeydown);
-    // modalFocusTrap.activate();
-    // FocusLock(modal);
-    // form.classList.add('visually-hidden');
-    // modalFocus();
-    // form.getElementsByClassName.display = 'none';
-  });
-
-  modalCloseButton.addEventListener('click', function () {
-    modal.classList.remove('is-active');
-    body.classList.remove('page__lock');
-    // modalFocusTrap.deactivate();
-    // form.classList.remove('visually-hidden');
-    // form.getElementsByClassName.display = 'flex';
-  });
-
-  modalOverlay.addEventListener('click', function () {
-    modal.classList.remove('is-active');
-    body.classList.remove('page__lock');
-  });
-
-
 });
 
+const pageFooterNavButton = document.querySelector('.page-footer__nav button');
+const pageFooterContactsButton = document.querySelector('.page-footer__contacts button');
+const pageFooterNav = document.querySelector('.page-footer__nav');
+const pageFooterContacts = document.querySelector('.page-footer__contacts');
+
+pageFooterNav.classList.add('page-footer__nav--js');
+pageFooterContacts.classList.add('page-footer__contacts--js');
+
+pageFooterNavButton.addEventListener('click', function () {
+  if (pageFooterNav.classList.contains('page-footer__nav--js')) {
+    pageFooterNav.classList.add('page-footer__nav--opened');
+    pageFooterNav.classList.remove('page-footer__nav--js');
+    pageFooterContacts.classList.remove('page-footer__contacts--opened');
+    pageFooterContacts.classList.add('page-footer__contacts--js');
+  } else {
+    pageFooterNav.classList.remove('page-footer__nav--opened');
+    pageFooterNav.classList.add('page-footer__nav--js');
+  }
+});
+
+pageFooterContactsButton.addEventListener('click', function () {
+  if (pageFooterContacts.classList.contains('page-footer__contacts--js')) {
+    pageFooterContacts.classList.add('page-footer__contacts--opened');
+    pageFooterContacts.classList.remove('page-footer__contacts--js');
+    pageFooterNav.classList.remove('page-footer__nav--opened');
+    pageFooterNav.classList.add('page-footer__nav--js');
+  } else {
+    pageFooterContacts.classList.remove('page-footer__contacts--opened');
+    pageFooterContacts.classList.add('page-footer__contacts--js');
+  }
+});
 
 // ---------------------------------
 

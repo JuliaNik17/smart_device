@@ -7,17 +7,17 @@
   width: 80%;
   max-width: 1220px;
   display: flex;
-  margin: 120px auto 100px;
+  margin: 107px auto 100px;
 
   @include vp-1023 {
     width: 88%;
-    margin: 80px auto;
+    margin: 63px auto 80px;
   }
 
   @include vp-767 {
     width: 85%;
     min-width: 270px;
-    margin-top: 50px;
+    margin-top: 20px;
   }
 }
 
@@ -25,10 +25,12 @@
   display: flex;
   width: 150px;
   align-items: flex-start;
-  margin-right: 100px;
+  margin-right: 98px;
+  margin-left: 10px;
 
   @include vp-1023 {
     margin-right: 29px;
+    margin-left: 0;
   }
 
   @include vp-767 {
@@ -58,15 +60,21 @@
 .about-company__info h2 {
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
-  font-size: 36px;
+  font-size: 34px;
   line-height: 51px;
   color: $color-black-pearl;
   margin-top: 0;
   margin-bottom: 15px;
 
+  @include vp-1023 {
+    font-size: 32px;
+    margin-bottom: 13px;
+  }
+
   @include vp-767 {
-    font-size: 28px;
+    font-size: 26px;
     line-height: 39px;
+    margin-bottom: 11px;
   }
 }
 
@@ -77,11 +85,41 @@
   line-height: 22px;
   color: $color-black-pearl;
   margin-top: 0;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  letter-spacing: 0.05em;
+
+  @include vp-1023 {
+    letter-spacing: 0.06em;
+  }
 
   @include vp-767 {
     font-size: 14px;
     line-height: 19px;
+    margin-bottom: 18px;
+  }
+}
+
+.about-company__info p:nth-child(3) {
+  margin-bottom: 0;
+}
+
+.about-company p br {
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.about-company__mob-hidden {
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.about-company__mob-shown {
+  display: none;
+
+  @include vp-767 {
+    display: block;
   }
 }
 
@@ -92,7 +130,7 @@
   line-height: 16px;
   color: $color-deep-sky-blue;
   background-color: unset;
-  letter-spacing: 0.05em;
+  letter-spacing: -0.05em;
   text-transform: uppercase;
   border: 1px solid $color-deep-sky-blue;
   box-sizing: border-box;
@@ -100,7 +138,7 @@
   width: 180px;
   height: 45px;
   cursor: pointer;
-  margin-top: 5px;
+  margin-top: 17px;
 
   &:hover,
   &:active,
@@ -109,8 +147,21 @@
     color: $color-alice-blue;
   }
 
+  @include vp-1023 {
+    margin-top: -5px;
+  }
+
   @include vp-767 {
     width: 160px;
     height: 35px;
+    margin-top: 13px;
+  }
+}
+
+.about-company__tablet {
+  display: none;
+
+  @include vp-1023 {
+    display: block;
   }
 }

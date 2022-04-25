@@ -3,7 +3,7 @@
   width: 100%;
   background-color: $color-deep-sky-blue;
   background-image: url("../img/sprite/form_background.svg");
-  background-position-y: -570px;
+  background-position-y: -580px;
 
   @include vp-1023 {
     background-image: none;
@@ -14,7 +14,9 @@
 .contact-us__wrapper {
   display: flex;
   width: 80%;
-  margin: 170px auto 250px;
+  max-width: 1230px;
+  margin: 165px auto 250px;
+  padding-left: 10px;
 
   @include vp-1023 {
     width: 87%;
@@ -30,15 +32,22 @@
 }
 
 .contact-us__decoration {
+  width: 42%;
+
   @include vp-1023 {
     display: none;
   }
+}
+
+.contact-us__decoration img {
+  margin-top: 80px;
 }
 
 .contact-us__form {
   display: flex;
   flex-direction: column;
   margin-left: auto;
+  width: 48%;
 
   @include vp-1023 {
     margin-left: 0;
@@ -49,11 +58,11 @@
 .contact-us__form h3 {
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
-  font-size: 36px;
+  font-size: 32px;
   line-height: 51px;
   color: $color-default-white;
   margin-top: 0;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 
   @include vp-1023 {
     margin-bottom: 10px;
@@ -81,7 +90,7 @@
   line-height: 22px;
   color: $color-default-white;
   margin-top: 0;
-  margin-bottom: 35px;
+  margin-bottom: 32px;
 
   @include vp-1023 {
     margin-bottom: 25px;
