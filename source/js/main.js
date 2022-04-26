@@ -53,10 +53,9 @@ window.addEventListener('DOMContentLoaded', () => {
     modalCloseButton.addEventListener('click', modalClosed);
 
     pageHeaderButton.addEventListener('click', function () {
-      // setTimeout(function () {
-      //   clientName.focus();
-      // }, 1);
-      clientName.focus();
+      setTimeout(function () {
+        clientName.focus();
+      }, 1);
       modal.classList.add('is-active');
       body.classList.add('page__lock');
       document.addEventListener('keydown', onModalEscKeydown);
