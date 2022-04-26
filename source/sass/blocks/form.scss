@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: column;
   width: 99%;
+
+  @include vp-1023 {
+    width: 100%;
+  }
 }
 
 .form fieldset {
@@ -9,6 +13,10 @@
   padding: 0;
   margin: 0;
   margin-bottom: 20px;
+
+  @include vp-767 {
+    margin-bottom: 0;
+  }
 }
 
 .form__list {
@@ -16,7 +24,10 @@
   padding: 0;
   margin: 0;
   display: flex;
-  // justify-content: space-between;
+
+  @include vp-1023 {
+    width: 100%;
+  }
 
   @include vp-767 {
     flex-direction: column;
@@ -31,13 +42,13 @@
   width: 47%;
 
   @include vp-1023 {
-    max-width: 320px;
+    width: 48%;
   }
 
   @include vp-767 {
     max-width: unset;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 21px;
   }
 }
 
@@ -52,6 +63,7 @@
 .form__list--modal .form__item {
   width: 100%;
   margin-bottom: 20px;
+  margin-left: 0;
 }
 
 .form input,
@@ -70,6 +82,11 @@
     filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
   }
 
+  @include vp-1023 {
+    padding-left: 14px;
+    padding-top: 12px;
+  }
+
   @include vp-767 {
     width: 100%;
   }
@@ -85,6 +102,16 @@
   padding-top: 25px;
   padding-bottom: 87px;
   color: $color-black-pearl;
+
+  @include vp-1023 {
+    padding-top: 32px;
+    padding-bottom: 80px;
+  }
+
+  @include vp-767 {
+    padding-top: 25px;
+    padding-bottom: 112px;
+  }
 }
 
 .form input::placeholder,
@@ -104,6 +131,7 @@
 
   @include vp-767 {
     flex-direction: column;
+    margin-top: 25px;
   }
 }
 
@@ -112,35 +140,49 @@
   margin-right: 8px;
   margin-top: 12px;
   margin-bottom: 0;
-  width: 260px;
+  width: 45%;
   align-self: center;
 
+  @include vp-1023 {
+    width: 47%;
+    margin-right: 5px;
+  }
+
   @include vp-767 {
-    margin-top: 25px;
+    width: 100%;
+    margin-top: 22px;
     margin-left: 0;
+    margin-right: 0;
   }
 }
 
-.form__agreement label {
-  position: relative;
-  width: 100%;
-  display: flex;
-}
+// .form__agreement label {
+//   position: relative;
+//   width: 100%;
+//   display: flex;
+// }
 
 .form__agreement input {
   width: 0;
 }
 
-.form__agreement p {
+.form__agreement label {
+  position: relative;
+  display: flex;
   font-family: "PT Mono", "Arial", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
   color: $color-default-white;
-  margin-left: 25px;
+  // margin-left: 25px;
   margin-right: 25px;
+  padding-left: 25px;
   margin-bottom: 0;
   opacity: 0.8;
+
+  @include vp-767 {
+    margin-left: 30px;
+  }
 }
 
 .form__agreement br {
@@ -158,7 +200,7 @@
   background-color: $color-black-pearl-button;
   border: none;
   border-radius: 3px;
-  width: 265px;
+  width: 45%;
   height: 45px;
   cursor: pointer;
 
@@ -167,6 +209,11 @@
   &:active {
     opacity: 0.8;
     color: $color-deep-sky-blue;
+  }
+
+  @include vp-1023 {
+    width: 40%;
+    letter-spacing: -0.05em;
   }
 
   @include vp-767 {

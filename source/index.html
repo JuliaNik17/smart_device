@@ -201,7 +201,7 @@
                   <button class="send-button button" type="submit">Задать вопрос</button>
                   <fieldset class="form__agreement">
                     <input class="visually-hidden agreement-checkbox" type="checkbox" name="agreement" id="agreement" checked required>
-                    <label class="agreement-name" for="agreement"><p>Я согласен на&nbsp;обработку <br> персональных данных</p></label>
+                    <label class="agreement-name" for="agreement">Я согласен на&nbsp;обработку <br> персональных данных</label>
                   </fieldset>
                 </div>
               </form>
@@ -234,26 +234,34 @@
                 <button class="page-footer__nav-button"></button>
               </div>
               <ul class="nav-list">
-                <li class="nav-list__item">
-                  <a href="#">О Компаниии</a>
+                <li class="nav-list__column nav-list__column--first">
+                  <ul>
+                    <li class="nav-list__item">
+                      <a href="#">О Компаниии</a>
+                    </li>
+                    <li class="nav-list__item">
+                      <a href="#">Продукты</a>
+                    </li>
+                    <li class="nav-list__item">
+                      <a href="#">Протзводство печатных <br> плат</a>
+                    </li>
+                    <li class="nav-list__item">
+                      <a href="#">Монтаж печатных плат</a>
+                    </li>
+                  </ul>
                 </li>
-                <li class="nav-list__item">
-                  <a href="#">Продукты</a>
-                </li>
-                <li class="nav-list__item">
-                  <a href="#">Протзводство печатных <br> плат</a>
-                </li>
-                <li class="nav-list__item">
-                  <a href="#">Монтаж печатных плат</a>
-                </li>
-                <li class="nav-list__item">
-                  <a href="#">Комплектующие</a>
-                </li>
-                <li class="nav-list__item">
-                  <a href="#">Доставка</a>
-                </li>
-                <li class="nav-list__item">
-                  <a href="#">Контакты</a>
+                <li class="nav-list__column nav-list__column--second">
+                  <ul>
+                    <li class="nav-list__item">
+                      <a href="#">Комплектующие</a>
+                    </li>
+                    <li class="nav-list__item">
+                      <a href="#">Доставка</a>
+                    </li>
+                    <li class="nav-list__item">
+                      <a href="#">Контакты</a>
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </nav>
@@ -315,7 +323,7 @@
                 <button class="send-button send-button--modal button" type="submit">Отправить</button>
                 <fieldset class="form__agreement">
                   <input class="visually-hidden agreement-checkbox" type="checkbox" name="agreement-modal" id="agreement-modal" checked required>
-                  <label class="agreement-name" for="agreement-modal"><p>Я согласен на&nbsp;обработку персональных данных</p></label>
+                  <label class="agreement-name" for="agreement-modal">Я согласен на&nbsp;обработку персональных данных</label>
                 </fieldset>
               </form>
         </div>
