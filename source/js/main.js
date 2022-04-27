@@ -1,6 +1,5 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
-import {FocusLock} from './utils/focus-lock';
 
 // ---------------------------------
 
@@ -8,14 +7,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Utils
   // ---------------------------------
-  const clientName = document.querySelector('.client-name-modal');
+  // const clientName = document.querySelector('.client-name-modal');
   const body = document.querySelector('.page__body');
   const pageHeaderButton = document.querySelector('.page-header__button');
   const modal = document.querySelector('.modal');
   const modalOverlay = document.querySelector('.modal__overlay');
   const modalCloseButton = document.querySelector('.modal__close-btn');
-  const modalForm = document.querySelector('.modal form');
-  const modalSendButton = document.querySelector('.send-button--modal');
   const isEscapeKey = (evt) => {
     return evt.key === 'Escape';
   };
@@ -43,7 +40,9 @@ window.addEventListener('DOMContentLoaded', () => {
   const pageFooterContactsButton = document.querySelector('.page-footer__contacts button');
   const pageFooterNav = document.querySelector('.page-footer__nav');
   const pageFooterContacts = document.querySelector('.page-footer__contacts');
+  IMask(phoneNumberModal, maskOptions);
   iosVhFix();
+  initModals();
 
   // Modules
   // ---------------------------------
@@ -53,26 +52,20 @@ window.addEventListener('DOMContentLoaded', () => {
     modalCloseButton.addEventListener('click', modalClosed);
 
     pageHeaderButton.addEventListener('click', function () {
-      setTimeout(function () {
-        clientName.focus();
-      }, 1);
+      // setTimeout(function () {
+      //   clientName.focus();
+      // }, 1);
       modal.classList.add('is-active');
       body.classList.add('page__lock');
       document.addEventListener('keydown', onModalEscKeydown);
-      modalForm.FocusLock = new FocusLock();
-      this._lockedSelector = clientName;
-      this._endElement = modalSendButton;
+      initModals();
     });
   })();
-
-  IMask(phoneNumberModal, maskOptions);
-
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
     initModals();
     IMask(phoneNumber, maskOptions);
-
     aboutCompanyButton.classList.remove('visually-hidden');
     aboutCompanyHidden.classList.add('visually-hidden');
 

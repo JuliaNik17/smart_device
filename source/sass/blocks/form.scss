@@ -1,4 +1,4 @@
-.form {
+form {
   display: flex;
   flex-direction: column;
   width: 99%;
@@ -8,7 +8,7 @@
   }
 }
 
-.form fieldset {
+form fieldset {
   border: none;
   padding: 0;
   margin: 0;
@@ -66,8 +66,8 @@
   margin-left: 0;
 }
 
-.form input,
-.form textarea {
+form input,
+form textarea {
   background-color: rgba(4, 20, 39, 0.15);
   color: rgba(255, 255, 255, 1);
   font-family: "PT Mono", "Arial", sans-serif;
@@ -92,12 +92,12 @@
   }
 }
 
-.form input {
+form input {
   width: 100%;
   color: $color-black-pearl;
 }
 
-.form textarea {
+form textarea {
   width: 100%;
   padding-top: 25px;
   padding-bottom: 87px;
@@ -114,8 +114,8 @@
   }
 }
 
-.form input::placeholder,
-.form textarea::placeholder {
+form input::placeholder,
+form textarea::placeholder {
   font-family: "PT Mono", "Arial", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -156,12 +156,6 @@
   }
 }
 
-// .form__agreement label {
-//   position: relative;
-//   width: 100%;
-//   display: flex;
-// }
-
 .form__agreement input {
   width: 0;
 }
@@ -189,7 +183,7 @@
   display: block;
 }
 
-.form button {
+form button {
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 700;
   font-size: 16px;
@@ -221,7 +215,7 @@
   }
 }
 
-.form .send-button--modal {
+form .send-button--modal {
   width: 100%;
   margin-bottom: 20px;
 

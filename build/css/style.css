@@ -1251,7 +1251,7 @@ button,
   margin-bottom: 32px;
 }
 
-.form {
+form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1262,7 +1262,7 @@ button,
   width: 99%;
 }
 
-.form fieldset {
+form fieldset {
   border: none;
   padding: 0;
   margin: 0;
@@ -1299,8 +1299,8 @@ button,
   margin-left: 0;
 }
 
-.form input,
-.form textarea {
+form input,
+form textarea {
   background-color: rgba(4, 20, 39, 0.15);
   color: white;
   font-family: "PT Mono", "Arial", sans-serif;
@@ -1312,26 +1312,26 @@ button,
   padding: 15px;
 }
 
-.form input:focus,
-.form textarea:focus {
+form input:focus,
+form textarea:focus {
   -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.form input {
+form input {
   width: 100%;
   color: #041827;
 }
 
-.form textarea {
+form textarea {
   width: 100%;
   padding-top: 25px;
   padding-bottom: 87px;
   color: #041827;
 }
 
-.form input::-webkit-input-placeholder,
-.form textarea::-webkit-input-placeholder {
+form input::-webkit-input-placeholder,
+form textarea::-webkit-input-placeholder {
   font-family: "PT Mono", "Arial", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -1340,8 +1340,8 @@ button,
   opacity: 1;
 }
 
-.form input::-moz-placeholder,
-.form textarea::-moz-placeholder {
+form input::-moz-placeholder,
+form textarea::-moz-placeholder {
   font-family: "PT Mono", "Arial", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -1350,8 +1350,8 @@ button,
   opacity: 1;
 }
 
-.form input:-ms-input-placeholder,
-.form textarea:-ms-input-placeholder {
+form input:-ms-input-placeholder,
+form textarea:-ms-input-placeholder {
   font-family: "PT Mono", "Arial", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -1360,8 +1360,8 @@ button,
   opacity: 1;
 }
 
-.form input::-ms-input-placeholder,
-.form textarea::-ms-input-placeholder {
+form input::-ms-input-placeholder,
+form textarea::-ms-input-placeholder {
   font-family: "PT Mono", "Arial", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -1370,8 +1370,8 @@ button,
   opacity: 1;
 }
 
-.form input::placeholder,
-.form textarea::placeholder {
+form input::placeholder,
+form textarea::placeholder {
   font-family: "PT Mono", "Arial", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -1423,7 +1423,7 @@ button,
   display: block;
 }
 
-.form button {
+form button {
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 700;
   font-size: 16px;
@@ -1439,21 +1439,21 @@ button,
   cursor: pointer;
 }
 
-.form button:hover,
-.form button:focus-visible,
-.form button:active {
+form button:hover,
+form button:focus-visible,
+form button:active {
   opacity: 0.8;
   color: #00b2ff;
 }
 
-.form .send-button--modal {
+form .send-button--modal {
   width: 100%;
   margin-bottom: 20px;
 }
 
-.form .send-button--modal:hover,
-.form .send-button--modal:focus-visible,
-.form .send-button--modal:active {
+form .send-button--modal:hover,
+form .send-button--modal:focus-visible,
+form .send-button--modal:active {
   opacity: 0.8;
   color: #00b2ff;
 }
@@ -2095,7 +2095,7 @@ button,
     margin-bottom: 24px;
   }
 
-  .form {
+  form {
     width: 100%;
   }
 
@@ -2107,13 +2107,13 @@ button,
     width: 48%;
   }
 
-  .form input,
-  .form textarea {
+  form input,
+  form textarea {
     padding-left: 14px;
     padding-top: 12px;
   }
 
-  .form textarea {
+  form textarea {
     padding-top: 32px;
     padding-bottom: 80px;
   }
@@ -2123,7 +2123,7 @@ button,
     margin-right: 5px;
   }
 
-  .form button {
+  form button {
     width: 40%;
     letter-spacing: -0.05em;
   }
@@ -2470,7 +2470,7 @@ button,
     width: 85%;
   }
 
-  .form fieldset {
+  form fieldset {
     margin-bottom: 0;
   }
 
@@ -2491,12 +2491,12 @@ button,
     margin-left: 0;
   }
 
-  .form input,
-  .form textarea {
+  form input,
+  form textarea {
     width: 100%;
   }
 
-  .form textarea {
+  form textarea {
     padding-top: 25px;
     padding-bottom: 112px;
   }
@@ -2520,7 +2520,7 @@ button,
     margin-left: 30px;
   }
 
-  .form button {
+  form button {
     width: 100%;
   }
 
