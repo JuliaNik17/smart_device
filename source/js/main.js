@@ -1,5 +1,6 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
+// import {createFocusTrap} from './modules/modals/focus-trap';
 
 // ---------------------------------
 
@@ -7,12 +8,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Utils
   // ---------------------------------
-  // const clientName = document.querySelector('.client-name-modal');
+  const clientName = document.querySelector('.client-name-modal');
   const body = document.querySelector('.page__body');
   const pageHeaderButton = document.querySelector('.page-header__button');
   const modal = document.querySelector('.modal');
   const modalOverlay = document.querySelector('.modal__overlay');
   const modalCloseButton = document.querySelector('.modal__close-btn');
+  // const focusTrap = createFocusTrap('#modal', {
+  //   onActivate: () => modal.classList.add('is-active'),
+  //   onDeactivate: () => modal.classList.remove('is-active'),
+  // });
   const isEscapeKey = (evt) => {
     return evt.key === 'Escape';
   };
@@ -28,6 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
     modal.classList.remove('is-active');
     body.classList.remove('page__lock');
     document.removeEventListener('keydown', onModalEscKeydown);
+    // focusTrap.deactivate();
   };
   const phoneNumber = document.querySelector('.phone-number');
   const maskOptions = {
@@ -52,13 +58,14 @@ window.addEventListener('DOMContentLoaded', () => {
     modalCloseButton.addEventListener('click', modalClosed);
 
     pageHeaderButton.addEventListener('click', function () {
-      // setTimeout(function () {
-      //   clientName.focus();
-      // }, 1);
+      setTimeout(function () {
+        clientName.focus();
+      }, 1);
       modal.classList.add('is-active');
       body.classList.add('page__lock');
       document.addEventListener('keydown', onModalEscKeydown);
       initModals();
+      // focusTrap.activate();
     });
   })();
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
