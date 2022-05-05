@@ -31,7 +31,6 @@
 
 .page-header__logo {
   width: 30%;
-  margin-left: 8px;
 
   @include vp-1023 {
     width: 45%;
@@ -53,7 +52,6 @@
 
 .page-header__contacts {
   width: 39%;
-  justify-content: space-between;
   min-width: 378px;
   display: flex;
   flex-direction: row;
@@ -93,7 +91,7 @@
   letter-spacing: -0.05em;
   height: 40px;
   margin-left: auto;
-  margin-right: 53px;
+  margin-right: 60px;
   margin-top: 5px;
   cursor: pointer;
 

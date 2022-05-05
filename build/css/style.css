@@ -699,14 +699,10 @@ button,
 
 .page-header__logo {
   width: 30%;
-  margin-left: 8px;
 }
 
 .page-header__contacts {
   width: 39%;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   min-width: 378px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -738,7 +734,7 @@ button,
   letter-spacing: -0.05em;
   height: 40px;
   margin-left: auto;
-  margin-right: 53px;
+  margin-right: 60px;
   margin-top: 5px;
   cursor: pointer;
 }
@@ -760,7 +756,11 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 5px 0 5px;
+  margin: 5px 0;
+}
+
+.contacts__item:nth-child(2n) {
+  margin-left: auto;
 }
 
 .contacts__item a {
@@ -827,7 +827,7 @@ button,
   -ms-flex-direction: column;
   flex-direction: column;
   width: 80%;
-  max-width: 960px;
+  max-width: 970px;
   margin: 205px auto 100px;
 }
 
@@ -905,7 +905,7 @@ button,
   margin: 120px auto 0;
   list-style: none;
   padding: 0;
-  padding-left: 12px;
+  padding-left: 8px;
 }
 
 .advantages__item {
@@ -921,7 +921,7 @@ button,
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border-left: 5px solid #00b2ff;
-  padding: 40px 45px 35px 43px;
+  padding: 45px 45px 35px 38px;
 }
 
 .advantages__item:hover {
@@ -967,7 +967,7 @@ button,
 }
 
 .advantages__item--privacy h3 {
-  margin-left: 2px;
+  margin-top: 25px;
 }
 
 .advantages__item p {
@@ -981,10 +981,6 @@ button,
   letter-spacing: 0.05em;
 }
 
-.advantages__item--suppliers {
-  margin-top: 9px;
-}
-
 .about-company {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -994,11 +990,11 @@ button,
 
 .about-company__wrapper {
   width: 80%;
-  max-width: 1220px;
+  max-width: 1240px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 107px auto 100px;
+  margin: 114px auto 100px;
 }
 
 .about-company__img {
@@ -1040,14 +1036,14 @@ button,
 }
 
 .about-company__info p {
-  font-family: "RPT Mono", "Arial", sans-serif;
+  font-family: "PT Mono", "Arial", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
   color: #041827;
   margin-top: 0;
   margin-bottom: 20px;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
 }
 
 .about-company__info p:nth-child(3) {
@@ -1107,7 +1103,6 @@ button,
   -ms-flex-direction: column;
   flex-direction: column;
   margin: 68px auto 144px;
-  padding-left: 10px;
 }
 
 .catalog__wrapper h2 {
@@ -1117,7 +1112,9 @@ button,
   line-height: 51px;
   color: #ffffff;
   margin-top: 0;
-  margin-bottom: 50px;
+  margin-bottom: 53px;
+  letter-spacing: -0.03em;
+  padding-left: 5px;
 }
 
 .catalog__head--mob {
@@ -1130,9 +1127,9 @@ button,
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 85px;
+  grid-gap: 87px;
   list-style: none;
-  padding: 0;
+  padding: 0 5px;
   margin: 0;
 }
 
@@ -1143,8 +1140,8 @@ button,
   font-size: 20px;
   line-height: 30px;
   color: #ffffff;
-  margin-top: 50px;
-  margin-left: 42px;
+  margin-top: 48px;
+  margin-left: 40px;
   position: absolute;
   letter-spacing: -0.05em;
 }
@@ -1191,10 +1188,21 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   width: 100%;
   background-color: #00b2ff;
-  background-image: url("../img/sprite/form_background.svg");
-  background-position-y: -580px;
+}
+
+.contact-us__triangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  border-top: 420px solid rgba(4, 24, 39, 0.5);
+  border-bottom: 420px solid transparent;
+  border-left: 25vw solid rgba(4, 24, 39, 0.5);
+  border-right: 25vw solid transparent;
+  overflow: hidden;
 }
 
 .contact-us__wrapper {
@@ -1204,7 +1212,7 @@ button,
   width: 80%;
   max-width: 1230px;
   margin: 165px auto 250px;
-  padding-left: 10px;
+  z-index: 5;
 }
 
 .contact-us__decoration {
@@ -1213,6 +1221,7 @@ button,
 
 .contact-us__decoration img {
   margin-top: 80px;
+  width: 100%;
 }
 
 .contact-us__form {
@@ -1224,7 +1233,7 @@ button,
   -ms-flex-direction: column;
   flex-direction: column;
   margin-left: auto;
-  width: 48%;
+  width: 49%;
 }
 
 .contact-us__form h3 {
@@ -1249,6 +1258,7 @@ button,
   color: #ffffff;
   margin-top: 0;
   margin-bottom: 32px;
+  padding-left: 7px;
 }
 
 form {
@@ -1260,6 +1270,7 @@ form {
   -ms-flex-direction: column;
   flex-direction: column;
   width: 99%;
+  padding: 0 7px;
 }
 
 form fieldset {
@@ -1295,8 +1306,12 @@ form fieldset {
 
 .form__list--modal .form__item {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   margin-left: 0;
+}
+
+.form__list--modal .form__item:nth-child(2n) {
+  margin-bottom: 15px;
 }
 
 form input,
@@ -1448,7 +1463,7 @@ form button:active {
 
 form .send-button--modal {
   width: 100%;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
 form .send-button--modal:hover,
@@ -1498,13 +1513,14 @@ form .send-button--modal:active {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  z-index: 5;
 }
 
 .page-footer__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: 1220px;
+  max-width: 1230px;
   width: 80%;
   margin: 50px auto;
 }
@@ -1535,7 +1551,7 @@ form .send-button--modal:active {
   display: flex;
   padding-left: 0;
   margin-top: 30px;
-  margin-left: 20px;
+  margin-left: 15px;
 }
 
 .page-footer__nav {
@@ -1548,7 +1564,7 @@ form .send-button--modal:active {
   flex-direction: column;
   margin-left: auto;
   width: 53%;
-  padding-left: 45px;
+  padding-left: 40px;
 }
 
 .page-footer__wrapper h3 {
@@ -1575,7 +1591,7 @@ form .send-button--modal:active {
   flex-direction: column;
   margin-left: auto;
   width: 40%;
-  padding-left: 30px;
+  padding-left: 20px;
 }
 
 .page-footer__logo img {
@@ -1631,11 +1647,11 @@ form .send-button--modal:active {
 
 .nav-list__column--second {
   margin-left: auto;
-  padding-left: 10px;
 }
 
 .nav-list__column ul {
   padding-left: 0;
+  list-style: none;
 }
 
 .nav-list__item:nth-child(5n),
@@ -1777,15 +1793,23 @@ form .send-button--modal:active {
 
 .modal__content {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: 500px;
   padding: 40px;
+  padding-bottom: 47px;
   background-color: #00b2ff;
 }
 
 .modal__close-btn {
   position: absolute;
-  top: 22px;
-  right: 22px;
+  top: 18px;
+  right: 15px;
   z-index: 1;
   width: 40px;
   height: 40px;
@@ -1831,7 +1855,7 @@ form .send-button--modal:active {
   line-height: 42px;
   color: #ffffff;
   margin-top: 0;
-  margin-bottom: 15px;
+  margin-bottom: 0;
 }
 
 .modal__content p {
@@ -1841,7 +1865,7 @@ form .send-button--modal:active {
   line-height: 22px;
   color: #ffffff;
   margin-top: 0;
-  margin-bottom: 35px;
+  margin-bottom: 40px;
 }
 
 .modal__content .agreement-name p {
@@ -1850,6 +1874,19 @@ form .send-button--modal:active {
 
 .modal__content .agreement-name {
   margin-left: 10px;
+}
+
+.modal__content form {
+  width: 100%;
+  padding: 0;
+}
+
+.modal__content fieldset {
+  margin-bottom: 0;
+}
+
+.modal__content .agreement-checkbox + label::before {
+  top: 0;
 }
 
 .accordeon__head {
@@ -1983,8 +2020,14 @@ form .send-button--modal:active {
   }
 
   .advantages__item {
+    padding-top: 40px;
     padding-left: 40px;
-    padding-bottom: 30px;
+    padding-bottom: 28px;
+  }
+
+  .advantages__item svg {
+    width: 35px;
+    height: 35px;
   }
 
   .advantages__item h3 {
@@ -1992,7 +2035,7 @@ form .send-button--modal:active {
   }
 
   .advantages__item--price h3 {
-    margin-top: 5px;
+    margin-top: 10px;
   }
 
   .advantages__item--privacy h3 {
@@ -2004,14 +2047,23 @@ form .send-button--modal:active {
     margin-bottom: 0;
   }
 
+  .advantages__item--privacy p {
+    margin-top: 4px;
+  }
+
+  .advantages__item--price p {
+    margin-top: 2px;
+  }
+
   .about-company__wrapper {
     width: 88%;
-    margin: 63px auto 80px;
+    margin: 75px auto 80px;
   }
 
   .about-company__img {
     margin-right: 29px;
     margin-left: 0;
+    margin-top: 5px;
   }
 
   .about-company__info {
@@ -2024,7 +2076,7 @@ form .send-button--modal:active {
   }
 
   .about-company__info p {
-    letter-spacing: 0.06em;
+    letter-spacing: 0.03em;
   }
 
   .about-company__button {
@@ -2033,6 +2085,10 @@ form .send-button--modal:active {
 
   .about-company__tablet {
     display: block;
+  }
+
+  .about-company__hidden {
+    margin-bottom: 20px;
   }
 
   .catalog__wrapper {
@@ -2053,6 +2109,7 @@ form .send-button--modal:active {
     -ms-grid-rows: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 30px;
+    padding: 0;
   }
 
   .catalog__item h3 {
@@ -2071,10 +2128,14 @@ form .send-button--modal:active {
     background-position-y: unset;
   }
 
+  .contact-us__triangle {
+    display: none;
+  }
+
   .contact-us__wrapper {
     width: 87%;
     margin-top: 45px;
-    margin-bottom: 102px;
+    margin-bottom: 125px;
     padding-left: 0;
   }
 
@@ -2093,10 +2154,12 @@ form .send-button--modal:active {
 
   .contact-us__form p {
     margin-bottom: 24px;
+    padding-left: 0;
   }
 
   form {
     width: 100%;
+    padding: 0;
   }
 
   .form__list {
@@ -2321,6 +2384,11 @@ form .send-button--modal:active {
     padding-bottom: 55px;
   }
 
+  .advantages__item svg {
+    width: 30px;
+    height: 30px;
+  }
+
   .advantages__item h3 {
     font-size: 20px;
     line-height: 28px;
@@ -2449,7 +2517,7 @@ form .send-button--modal:active {
   .contact-us__wrapper {
     width: 84%;
     min-width: 270px;
-    margin-bottom: 53px;
+    margin-bottom: 89px;
   }
 
   .contact-us__form h3 {
@@ -2517,7 +2585,9 @@ form .send-button--modal:active {
   }
 
   .form__agreement label {
-    margin-left: 30px;
+    margin-left: 0;
+    padding-top: 3px;
+    padding-left: 30px;
   }
 
   form button {
@@ -2580,7 +2650,7 @@ form .send-button--modal:active {
     position: relative;
     background-color: unset;
     border: none;
-    background-image: url("../img/sprite/plus_button.svg");
+    background: url("../img/sprite/plus_button.svg") no-repeat;
     margin-left: auto;
     margin-bottom: 5px;
     margin-right: 3px;
@@ -2617,7 +2687,7 @@ form .send-button--modal:active {
     width: 15px;
     height: 15px;
     background-color: unset;
-    background-image: url("../img/sprite/minus_button.svg");
+    background: url("../img/sprite/minus_button.svg") no-repeat;
     cursor: pointer;
   }
 
@@ -2696,6 +2766,11 @@ form .send-button--modal:active {
     -ms-flex-align: center;
     align-items: center;
     padding: 16px 23px;
+    cursor: pointer;
+  }
+
+  .accordeon__head :hover {
+    opacity: 0.7;
   }
 }
 

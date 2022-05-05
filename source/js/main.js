@@ -1,9 +1,3 @@
-import {iosVhFix} from './utils/ios-vh-fix';
-import {initModals} from './modules/modals/init-modals';
-// import {createFocusTrap} from './modules/modals/focus-trap';
-
-// ---------------------------------
-
 window.addEventListener('DOMContentLoaded', () => {
 
   // Utils
@@ -14,10 +8,11 @@ window.addEventListener('DOMContentLoaded', () => {
   const modal = document.querySelector('.modal');
   const modalOverlay = document.querySelector('.modal__overlay');
   const modalCloseButton = document.querySelector('.modal__close-btn');
-  // const focusTrap = createFocusTrap('#modal', {
-  //   onActivate: () => modal.classList.add('is-active'),
-  //   onDeactivate: () => modal.classList.remove('is-active'),
-  // });
+  const focusableElements =
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+  const firstFocusableElement = modal.querySelectorAll(focusableElements)[0];
+  const focusableContent = modal.querySelectorAll(focusableElements);
+  const lastFocusableElement = focusableContent[focusableContent.length - 1];
   const isEscapeKey = (evt) => {
     return evt.key === 'Escape';
   };
@@ -33,7 +28,6 @@ window.addEventListener('DOMContentLoaded', () => {
     modal.classList.remove('is-active');
     body.classList.remove('page__lock');
     document.removeEventListener('keydown', onModalEscKeydown);
-    // focusTrap.deactivate();
   };
   const phoneNumber = document.querySelector('.phone-number');
   const maskOptions = {
@@ -42,13 +36,12 @@ window.addEventListener('DOMContentLoaded', () => {
   const phoneNumberModal = document.querySelector('.phone-number-modal');
   const aboutCompanyButton = document.querySelector('.about-company__button');
   const aboutCompanyHidden = document.querySelector('.about-company__hidden');
-  const pageFooterNavButton = document.querySelector('.page-footer__nav button');
-  const pageFooterContactsButton = document.querySelector('.page-footer__contacts button');
   const pageFooterNav = document.querySelector('.page-footer__nav');
   const pageFooterContacts = document.querySelector('.page-footer__contacts');
+  const accordeonHeadNav = document.querySelector('.accordeon__head--nav');
+  const accordeonHeadContacts = document.querySelector('.accordeon__head--contacts');
   IMask(phoneNumberModal, maskOptions);
-  iosVhFix();
-  initModals();
+
 
   // Modules
   // ---------------------------------
@@ -58,20 +51,38 @@ window.addEventListener('DOMContentLoaded', () => {
     modalCloseButton.addEventListener('click', modalClosed);
 
     pageHeaderButton.addEventListener('click', function () {
+      document.addEventListener('keydown', function(e) {
+        let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+
+        if (!isTabPressed) {
+          return;
+        }
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstFocusableElement) {
+            lastFocusableElement.focus();
+            e.preventDefault();
+          }
+        } else {
+          if (document.activeElement === lastFocusableElement) {
+            firstFocusableElement.focus();
+            e.preventDefault();
+          }
+        }
+      });
+
+      firstFocusableElement.focus();
       setTimeout(function () {
         clientName.focus();
       }, 1);
       modal.classList.add('is-active');
       body.classList.add('page__lock');
       document.addEventListener('keydown', onModalEscKeydown);
-      initModals();
-      // focusTrap.activate();
     });
   })();
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
-    initModals();
     IMask(phoneNumber, maskOptions);
     aboutCompanyButton.classList.remove('visually-hidden');
     aboutCompanyHidden.classList.add('visually-hidden');
@@ -89,7 +100,7 @@ window.addEventListener('DOMContentLoaded', () => {
     pageFooterNav.classList.add('page-footer__nav--js');
     pageFooterContacts.classList.add('page-footer__contacts--js');
 
-    pageFooterNavButton.addEventListener('click', function () {
+    accordeonHeadNav.addEventListener('click', function () {
       if (pageFooterNav.classList.contains('page-footer__nav--js')) {
         pageFooterNav.classList.add('page-footer__nav--opened');
         pageFooterNav.classList.remove('page-footer__nav--js');
@@ -101,7 +112,7 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    pageFooterContactsButton.addEventListener('click', function () {
+    accordeonHeadContacts.addEventListener('click', function () {
       if (pageFooterContacts.classList.contains('page-footer__contacts--js')) {
         pageFooterContacts.classList.add('page-footer__contacts--opened');
         pageFooterContacts.classList.remove('page-footer__contacts--js');

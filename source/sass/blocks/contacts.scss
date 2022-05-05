@@ -1,7 +1,7 @@
 .contacts__item {
   display: flex;
   // width: 50%;
-  margin: 5px 0 5px;
+  margin: 5px 0;
 
   @include vp-1023 {
     margin-right: 15px;
@@ -12,6 +12,10 @@
     margin-bottom: 15px;
     margin-right: 25px;
   }
+}
+
+.contacts__item:nth-child(2n) {
+  margin-left: auto;
 }
 
 .contacts__item--email {

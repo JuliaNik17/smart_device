@@ -5,13 +5,13 @@
 
 .about-company__wrapper {
   width: 80%;
-  max-width: 1220px;
+  max-width: 1240px;
   display: flex;
-  margin: 107px auto 100px;
+  margin: 114px auto 100px;
 
   @include vp-1023 {
     width: 88%;
-    margin: 63px auto 80px;
+    margin: 75px auto 80px;
   }
 
   @include vp-767 {
@@ -31,6 +31,7 @@
   @include vp-1023 {
     margin-right: 29px;
     margin-left: 0;
+    margin-top: 5px;
   }
 
   @include vp-767 {
@@ -79,17 +80,17 @@
 }
 
 .about-company__info p {
-  font-family: "RPT Mono", "Arial", sans-serif;
+  font-family: "PT Mono", "Arial", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
   color: $color-black-pearl;
   margin-top: 0;
   margin-bottom: 20px;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
 
   @include vp-1023 {
-    letter-spacing: 0.06em;
+    letter-spacing: 0.03em;
   }
 
   @include vp-767 {
@@ -163,5 +164,11 @@
 
   @include vp-1023 {
     display: block;
+  }
+}
+
+.about-company__hidden {
+  @include vp-1023 {
+    margin-bottom: 20px;
   }
 }
