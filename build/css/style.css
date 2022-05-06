@@ -389,7 +389,7 @@ template {
   font-weight: 400;
   font-family: "PT Mono";
   font-display: swap;
-  src: url("../fonts/ptmono-regular.woff2") format("woff2"), url("../fonts/ptmono-regular.woff") format("woff");
+  src: url("../fonts/PTMono-Regular.woff2") format("woff2"), url("../fonts/PTMono-Regular.woff") format("woff");
 }
 
 @font-face {
@@ -397,7 +397,7 @@ template {
   font-weight: 400;
   font-family: "Roboto Condensed";
   font-display: swap;
-  src: url("../fonts/roboto_condensed_regular.woff2") format("woff2"), url("../fonts/roboto_condensed_regular.woff") format("woff");
+  src: url("../fonts/RobotoCondensed-Regular.woff2") format("woff2"), url("../fonts/RobotoCondensed-Regular.woff") format("woff");
 }
 
 @font-face {
@@ -405,7 +405,7 @@ template {
   font-weight: 700;
   font-family: "Roboto Condensed";
   font-display: swap;
-  src: url("../fonts/roboto_condensed_700.woff2") format("woff2"), url("../fonts/roboto_condensed_700.woff") format("woff");
+  src: url("../fonts/RobotoCondensed-Bold.woff2") format("woff2"), url("../fonts/RobotoCondensed-Bold.woff") format("woff");
 }
 
 *,
@@ -731,7 +731,7 @@ button,
   box-sizing: border-box;
   border-radius: 3px;
   padding: 10px 15px;
-  letter-spacing: -0.05em;
+  letter-spacing: 0.05em;
   height: 40px;
   margin-left: auto;
   margin-right: 60px;
@@ -833,10 +833,10 @@ button,
 
 .intro__wrapper h2 {
   font-family: "Roboto Condensed", "Arial", sans-serif;
-  font-size: 76px;
+  font-size: 80px;
   line-height: 94px;
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   color: #f2f5f7;
   margin: 0;
@@ -849,7 +849,6 @@ button,
   line-height: 34px;
   color: #f2f5f7;
   margin: 30px 0 50px;
-  letter-spacing: 0.01em;
 }
 
 .intro__wrapper a {
@@ -874,7 +873,7 @@ button,
   font-weight: 700;
   font-size: 18px;
   line-height: 21px;
-  letter-spacing: -0.05em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   padding: 15px 19px;
   text-align: center;
@@ -894,7 +893,7 @@ button,
 
 .advantages__list {
   width: 80%;
-  max-width: 1235px;
+  max-width: 1225px;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr 1fr;
@@ -905,7 +904,6 @@ button,
   margin: 120px auto 0;
   list-style: none;
   padding: 0;
-  padding-left: 8px;
 }
 
 .advantages__item {
@@ -921,7 +919,7 @@ button,
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border-left: 5px solid #00b2ff;
-  padding: 45px 45px 35px 38px;
+  padding: 40px 40px 35px;
 }
 
 .advantages__item:hover {
@@ -935,8 +933,6 @@ button,
 
 .advantages__item svg {
   fill: #00b2ff;
-  width: 30px;
-  height: 30px;
 }
 
 .advantages__item:hover svg {
@@ -947,8 +943,7 @@ button,
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
   font-size: 24px;
-  line-height: 35px;
-  letter-spacing: -0.05em;
+  line-height: 34px;
   color: #00b2ff;
   margin-top: 20px;
   margin-bottom: 0;
@@ -959,7 +954,7 @@ button,
 }
 
 .advantages__item--privacy {
-  padding: 37px 45px 35px 40px;
+  padding: 37px 45px 35px 37px;
 }
 
 .advantages__item--price {
@@ -967,7 +962,7 @@ button,
 }
 
 .advantages__item--privacy h3 {
-  margin-top: 25px;
+  margin-left: 5px;
 }
 
 .advantages__item p {
@@ -978,7 +973,15 @@ button,
   color: #041827;
   margin-top: 12px;
   margin-bottom: 35px;
-  letter-spacing: 0.05em;
+}
+
+.advantages__item--privacy p {
+  margin-top: 15px;
+  margin-left: 5px;
+}
+
+.advantages__item--price p {
+  margin-top: 14px;
 }
 
 .about-company {
@@ -994,7 +997,7 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 114px auto 100px;
+  margin: 117px auto 100px;
 }
 
 .about-company__img {
@@ -1005,7 +1008,7 @@ button,
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
-  margin-right: 98px;
+  margin-right: 103px;
   margin-left: 10px;
 }
 
@@ -1028,11 +1031,11 @@ button,
 .about-company__info h2 {
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
-  font-size: 34px;
+  font-size: 36px;
   line-height: 51px;
   color: #041827;
-  margin-top: 0;
-  margin-bottom: 15px;
+  margin-top: 3px;
+  margin-bottom: 12px;
 }
 
 .about-company__info p {
@@ -1043,7 +1046,6 @@ button,
   color: #041827;
   margin-top: 0;
   margin-bottom: 20px;
-  letter-spacing: 0.03em;
 }
 
 .about-company__info p:nth-child(3) {
@@ -1061,7 +1063,7 @@ button,
   line-height: 16px;
   color: #00b2ff;
   background-color: unset;
-  letter-spacing: -0.05em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   border: 1px solid #00b2ff;
   -webkit-box-sizing: border-box;
@@ -1070,7 +1072,7 @@ button,
   width: 180px;
   height: 45px;
   cursor: pointer;
-  margin-top: 17px;
+  margin-top: 18px;
 }
 
 .about-company__button:hover,
@@ -1113,7 +1115,6 @@ button,
   color: #ffffff;
   margin-top: 0;
   margin-bottom: 53px;
-  letter-spacing: -0.03em;
   padding-left: 5px;
 }
 
@@ -1143,7 +1144,6 @@ button,
   margin-top: 48px;
   margin-left: 40px;
   position: absolute;
-  letter-spacing: -0.05em;
 }
 
 .catalog__item a {
@@ -1239,7 +1239,7 @@ button,
 .contact-us__form h3 {
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 36px;
   line-height: 51px;
   color: #ffffff;
   margin-top: 0;
@@ -1575,6 +1575,7 @@ form .send-button--modal:active {
   line-height: 16px;
   text-transform: uppercase;
   margin: 5px 0;
+  letter-spacing: 0.05em;
 }
 
 .page-footer__wrapper button {
@@ -1874,6 +1875,7 @@ form .send-button--modal:active {
 
 .modal__content .agreement-name {
   margin-left: 10px;
+  margin-right: 0;
 }
 
 .modal__content form {
@@ -1995,14 +1997,12 @@ form .send-button--modal:active {
   }
 
   .intro__wrapper h2 {
-    font-size: 60px;
+    font-size: 64px;
     line-height: 75px;
-    letter-spacing: -0.01em;
   }
 
   .intro__wrapper p {
     margin: 0 0 57px;
-    letter-spacing: 0.05em;
   }
 
   .intro__wrapper a {
@@ -2023,11 +2023,6 @@ form .send-button--modal:active {
     padding-top: 40px;
     padding-left: 40px;
     padding-bottom: 28px;
-  }
-
-  .advantages__item svg {
-    width: 35px;
-    height: 35px;
   }
 
   .advantages__item h3 {
@@ -2057,13 +2052,13 @@ form .send-button--modal:active {
 
   .about-company__wrapper {
     width: 88%;
-    margin: 75px auto 80px;
+    margin: 75px auto 78px;
   }
 
   .about-company__img {
     margin-right: 29px;
     margin-left: 0;
-    margin-top: 5px;
+    margin-top: 7px;
   }
 
   .about-company__info {
@@ -2071,12 +2066,7 @@ form .send-button--modal:active {
   }
 
   .about-company__info h2 {
-    font-size: 32px;
     margin-bottom: 13px;
-  }
-
-  .about-company__info p {
-    letter-spacing: 0.03em;
   }
 
   .about-company__button {
@@ -2098,9 +2088,8 @@ form .send-button--modal:active {
   }
 
   .catalog__wrapper h2 {
-    font-size: 34px;
-    letter-spacing: -0.01em;
     margin-bottom: 37px;
+    padding-left: 0;
   }
 
   .catalog__list {
@@ -2188,7 +2177,6 @@ form .send-button--modal:active {
 
   form button {
     width: 40%;
-    letter-spacing: -0.05em;
   }
 
   .agreement-checkbox + label::before {
@@ -2332,14 +2320,12 @@ form .send-button--modal:active {
   .intro__wrapper h2 {
     font-size: 36px;
     line-height: 42px;
-    letter-spacing: -0.06em;
   }
 
   .intro__wrapper p {
     font-size: 14px;
     line-height: 22px;
     margin: 7px 0 45px;
-    letter-spacing: 0.04em;
   }
 
   .intro__wrapper p br {
@@ -2439,6 +2425,7 @@ form .send-button--modal:active {
     width: 85%;
     min-width: 270px;
     margin-top: 20px;
+    margin-bottom: 80px;
   }
 
   .about-company__img {
@@ -2450,9 +2437,10 @@ form .send-button--modal:active {
   }
 
   .about-company__info h2 {
-    font-size: 26px;
+    font-size: 28px;
     line-height: 39px;
     margin-bottom: 11px;
+    margin-top: 0;
   }
 
   .about-company__info p {
@@ -2488,7 +2476,6 @@ form .send-button--modal:active {
   .catalog__wrapper h2 {
     font-size: 28px;
     line-height: 39px;
-    letter-spacing: -0.04em;
     margin-bottom: 30px;
   }
 
@@ -2517,13 +2504,12 @@ form .send-button--modal:active {
   .contact-us__wrapper {
     width: 84%;
     min-width: 270px;
-    margin-bottom: 89px;
+    margin-bottom: 87px;
   }
 
   .contact-us__form h3 {
     font-size: 30px;
     line-height: 42px;
-    letter-spacing: -0.05em;
     margin-bottom: 10px;
   }
 
@@ -2621,12 +2607,17 @@ form .send-button--modal:active {
 
   .page-footer__social {
     margin: 15px auto 0;
+    padding-left: 5px;
   }
 
   .page-footer__nav {
     width: 100%;
     border-top: 1px solid rgba(248, 253, 255, 0.7);
     padding-left: 0;
+  }
+
+  .page-footer__wrapper h3 {
+    padding-left: 2px;
   }
 
   .page-footer__contacts {
@@ -2638,6 +2629,7 @@ form .send-button--modal:active {
 
   .page-footer__logo img {
     margin: 0 auto;
+    padding-right: 5px;
   }
 
   .page-footer__nav--js button,
@@ -2650,7 +2642,8 @@ form .send-button--modal:active {
     position: relative;
     background-color: unset;
     border: none;
-    background: url("../img/sprite/plus_button.svg") no-repeat;
+    background-image: url("../img/sprite/plus_button.svg");
+    background-repeat: no-repeat;
     margin-left: auto;
     margin-bottom: 5px;
     margin-right: 3px;
@@ -2687,7 +2680,8 @@ form .send-button--modal:active {
     width: 15px;
     height: 15px;
     background-color: unset;
-    background: url("../img/sprite/minus_button.svg") no-repeat;
+    background-image: url("../img/sprite/minus_button.svg");
+    background-repeat: no-repeat;
     cursor: pointer;
   }
 

@@ -40,7 +40,22 @@ window.addEventListener('DOMContentLoaded', () => {
   const pageFooterContacts = document.querySelector('.page-footer__contacts');
   const accordeonHeadNav = document.querySelector('.accordeon__head--nav');
   const accordeonHeadContacts = document.querySelector('.accordeon__head--contacts');
+  const PHONE_NUMBER_LENGTH = 16;
   IMask(phoneNumberModal, maskOptions);
+
+  phoneNumberModal.addEventListener('input', () => {
+    const valueLength = phoneNumberModal.value.length;
+
+    if (valueLength < PHONE_NUMBER_LENGTH) {
+      phoneNumberModal.setCustomValidity('Введите номер телефона в формате: +7 (800) 788-20-20');
+    } else if (valueLength > PHONE_NUMBER_LENGTH) {
+      phoneNumberModal.setCustomValidity('Номер телефона не должен превышать 16 знаков');
+    } else {
+      phoneNumberModal.setCustomValidity('');
+    }
+
+    phoneNumberModal.reportValidity();
+  });
 
 
   // Modules
@@ -95,6 +110,20 @@ window.addEventListener('DOMContentLoaded', () => {
         aboutCompanyHidden.classList.add('visually-hidden');
         aboutCompanyButton.textContent = 'Подробнее';
       }
+    });
+
+    phoneNumber.addEventListener('input', () => {
+      const valueLength = phoneNumber.value.length;
+
+      if (valueLength < PHONE_NUMBER_LENGTH) {
+        phoneNumber.setCustomValidity('Введите номер телефона в формате: +7 (800) 788-20-20');
+      } else if (valueLength > PHONE_NUMBER_LENGTH) {
+        phoneNumber.setCustomValidity('Номер телефона не должен превышать 16 знаков');
+      } else {
+        phoneNumber.setCustomValidity('');
+      }
+
+      phoneNumber.reportValidity();
     });
 
     pageFooterNav.classList.add('page-footer__nav--js');

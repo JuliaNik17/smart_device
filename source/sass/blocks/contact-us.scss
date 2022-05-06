@@ -46,7 +46,7 @@
   @include vp-767 {
     width: 84%;
     min-width: 270px;
-    margin-bottom: 89px;
+    margin-bottom: 87px;
   }
 }
 
@@ -78,7 +78,7 @@
 .contact-us__form h3 {
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 36px;
   line-height: 51px;
   color: $color-default-white;
   margin-top: 0;
@@ -91,7 +91,6 @@
   @include vp-767 {
     font-size: 30px;
     line-height: 42px;
-    letter-spacing: -0.05em;
     margin-bottom: 10px;
   }
 }
